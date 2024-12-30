@@ -104,7 +104,7 @@ def main():
                 raw_text = get_pdf_text(pdf_docs)
                 text_chunks = get_text_chunks(raw_text)
                 get_vector_store(text_chunks)
-                st.success("Lets chat")
+                st.success("Lets chat with us")
 
     # Main content area for displaying chat messages
     st.title("Chat with WholeLife Church Bot🤖")
