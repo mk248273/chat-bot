@@ -56,7 +56,11 @@ def get_conversational_chain():
 
     model = ChatGroq(
         api_key="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",
-        model_name="mixtral-8x7b-32768"
+        model_name="mixtral-8x7b-32768",
+        temperature=0.9,
+        max_tokens=200,
+
+
     )
 
 
