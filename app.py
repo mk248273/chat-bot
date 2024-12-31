@@ -47,9 +47,9 @@ def get_vector_store(chunks):
 def get_conversational_chain():
     prompt_template = """
     instructions:
-        Answer the question from the provided context,
-        if the answer is not in provided context just say, "answer is not available in the context"
-        don't provide the wrong answer\n\n
+        Answer the question from the given context,
+        if the answer is not in context so then just say, "answer is not available in the context"
+        don't provide the wrong answer and any kind of url \n\n
     Context:\n {context}\n
     Question: \n{question}?\n
 
