@@ -30,7 +30,7 @@ def get_pdf_text(pdf):
 
 def get_text_chunks(text):
     splitter = RecursiveCharacterTextSplitter(
-        chunk_size=10000, chunk_overlap=1000)
+        chunk_size=1000, chunk_overlap=200)
     chunks = splitter.split_text(text)
     return chunks  # list of strings
 
@@ -84,8 +84,8 @@ def user_input(user_question):
         model="models/embedding-001")  # type: ignore
 
     new_db = FAISS.load_local("faiss_index", embeddings, allow_dangerous_deserialization=True) 
-    docs = new_db.similarity_search(user_question)
-    docs = docs[:1]
+    docs = new_db.similarity_search(user_question,k=4)
+    # docs = docs[:1]
     chain = get_conversational_chain()
 
     response = chain(
